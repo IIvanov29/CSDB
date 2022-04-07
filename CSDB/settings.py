@@ -28,7 +28,7 @@ DEBUG_PROPAGATE_EXCEPTIONS = True
 
 
 ALLOWED_HOSTS = [
-    "localhost", "127.0.0.1"
+    "localhost", "127.0.0.1","cybersecuritydatabase.herokuapp.com"
 ]
 
 
