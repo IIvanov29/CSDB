@@ -4,7 +4,7 @@
 <div class="container-fluid d-flex align-items-center justify-content-center flex-column">
     {% for post in posts %}
     <div id="post" class="row container-fluid my-1">
-        <div id="author_column" class="col-md-4 flex-row">
+        <div id="author_column" class="col-lg-4 flex-row">
             <div class="col-xs-4">
                 <p>By: {{ post.author }}</p>
             </div>
@@ -12,7 +12,7 @@
                 <p>Posted on: {{ post.date_posted }}</p>
             </div>
         </div>
-        <div id="title" class="col-md-8 align-items-center d-flex justify-content-center">
+        <div id="title" class="col-lg-8 align-items-center d-flex justify-content-center">
             <p class="text h1">{{ post.title }}</p>
         </div>
     </div>

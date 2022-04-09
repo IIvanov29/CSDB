@@ -1,25 +1,18 @@
 body{
     font-family: 'Roboto Condensed', sans-serif;
     font-size:2em;
-    background:linear-gradient(#bbc4ca,#525050)  no-repeat fixed;
+    background:rgba(216, 216, 216, 0.678);
 }
 
-.navbar{
-    opacity: 0.7;
+.nav-link{
+    color:white !important;
 }
-.navbar-nav > li{
-    margin-left:0.5vw;
-}
-
-.navbar-text a{
-    margin-right:1vw;
-    text-decoration: none;
+.nav-link:hover{
+    color:rgb(158, 158, 158) !important;
 }
 
 #main_content{
-    border-left:solid black 0.5px;
-    border-right:solid black 0.5px;
-    min-width:75%;
+   max-width: 98%;
 }
 
 
@@ -34,11 +27,23 @@ body{
 }
 
 @media (max-width: 1200px) {}
-@media (max-width: 1024px) {}
-@media (max-width: 768px) {
+@media (max-width: 990px) {
     #author_column{
         border-right:none;
         border-bottom: solid black 0.25px;
     }
+    
 }
-@media (max-width: 480px) {}
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 575px) {
+.nav-link{
+    margin-right:1vw;
+}
+.navbar-text{
+    margin-right:25%;
+    margin-left:25%;  
+}
+}
