@@ -1,21 +1,71 @@
 
 {% extends "csdb_templates/base.html" %}
 {% block content %}
-<div class="container-fluid d-flex align-items-center justify-content-center flex-column">
+<div id="submission_filters" class="row container-fluid d-flex justify-content-end">
+    <div class="col ps-0">
+        <div class="input-group">
+            <div class="form-outline">
+              <input type="search" id="form1" class="form-control" />
+            </div>
+            <button type="button" class="btn btn-dark">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+    </div>
+</div>
+<div id="submissions" class="container-fluid d-flex align-items-center justify-content-center flex-column mx-0 ps-2 pe-1">
+    <div id="posts_legend" class="mb-1  row container-fluid flex-row ps-1">
+        <div id="title" class="col-4 pt-2 ps-0 pb-0 d-flex justify-content-start align-items-end">
+        <p>Submission Title</p>
+        </div>
+        <div class="col-2 me-1 pt-2 ps-0  d-flex justify-content-start align-items-end">
+            <p>Type</p>
+        </div>
+        <div class="col-3 me-1 pt-2 ps-0  d-flex justify-content-center align-items-end ">
+            <p>Author</p>
+        </div>
+        <div class="col-2 pt-2 ps-0 d-flex justify-content-center align-items-end ">
+            <p>Date</p>
+        </div>
+</div>
     {% for post in posts %}
-    <div id="post" class="row container-fluid my-1">
-        <div id="author_column" class="col-lg-4 flex-row">
-            <div class="col-xs-4">
-                <p>By: {{ post.author }}</p>
+    <div id="post" class="row container-fluid flex-row ps-1">
+            <div id="title" class="col-4 ps-0 pt-2 d-flex justify-content-start">
+            <p>{{ post.title }}</p>
             </div>
-            <div class="col-xs-4">
-                <p>Posted on: {{ post.date_posted }}</p>
+            <div class="col-2 me-2 pt-2 ps-0 d-flex justify-content-start ">
+                <p>{{ post.type }}</p>
             </div>
-        </div>
-        <div id="title" class="col-lg-8 align-items-center d-flex justify-content-center">
-            <p class="text h1">{{ post.title }}</p>
-        </div>
+            <div class="col-3 me-1 pt-2 d-flex justify-content-center ">
+                <p>{{ post.author }}</p>
+            </div>
+            <div id="posted_date" class="col-2 pt-2 d-flex">
+                <p>{{ post.date_posted }}</p>
+            </div>
     </div>
     {% endfor %}
+</div>
+<div id="page_nav" class="row">
+    <div class="col d-flex align-items-center justify-content-center mt-3">
+        <nav aria-label="Page navigation">
+            <ul class="pagination pagination-sm">
+              <li class="page-item">
+                <a class="page-link" style="color:black;" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                  <span class="sr-only">Previous</span>
+                </a>
+              </li>
+              <li class="page-item"><a style="color:black;" class="page-link" href="#">1</a></li>
+              <li class="page-item"><a style="color:black;"class="page-link" href="#">2</a></li>
+              <li class="page-item"><a style="color:black;"class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" style="color:black;" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+    </div>
 </div>
 {% endblock content %}

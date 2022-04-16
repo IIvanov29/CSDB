@@ -2,16 +2,32 @@ from django.shortcuts import render
 
 posts =[
     {
-        'author':'IIvanov',
+        'author':'Ivelin Ivanov 2',
         'title':'SQL Injections',
+        'type': 'Web Application',
         'content':'SQL Injections in a nutshell',
-        'date_posted':'April, 7, 2022',
+        'date_posted':'04/12/2022',
     },
     {
         'author':'IIvanov2',
         'title': 'SQL Injections2',
+        'type': 'Web Application',
         'content': 'SQL Injections in a nutshell',
-        'date_posted': 'April, 8, 2022',
+        'date_posted': '05/12/2022',
+    },
+    {
+        'author':'IIvanov2',
+        'title': 'SQL Injections2',
+        'type': 'Web Application',
+        'content': 'SQL Injections in a nutshell',
+        'date_posted': '06/12/2022',
+    },
+     {
+        'author':'IIvanov2',
+        'title': 'SQL Injections2',
+        'type': 'Web Application',
+        'content': 'SQL Injections in a nutshell',
+        'date_posted': '06/12/2022',
     }
 ]
 
