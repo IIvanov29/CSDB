@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-kpunvs1syhu%ly!zqv^8b*!zq@+6g%txo@1_^xlq$ra*_@sxr0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 DEBUG_PROPAGATE_EXCEPTIONS = True
 
 
@@ -81,8 +81,12 @@ WSGI_APPLICATION = 'CSDB.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'submissions',
+        'USER': 'csdb',
+        'PASSWORD': 'csdbpass',
+        'HOST': 'localhost',
+        'PORT': '5432'
     }
 }
 
