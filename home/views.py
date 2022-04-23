@@ -1,44 +1,23 @@
-from django.shortcuts import render
-
-posts =[
-    {
-        'author':'Ivelin Ivanov 2',
-        'title':'SQL Injections',
-        'type': 'Web Application',
-        'content':'SQL Injections in a nutshell',
-        'date_posted':'04/12/2022',
-    },
-    {
-        'author':'IIvanov2',
-        'title': 'SQL Injections2',
-        'type': 'Web Application',
-        'content': 'SQL Injections in a nutshell',
-        'date_posted': '05/12/2022',
-    },
-    {
-        'author':'IIvanov2',
-        'title': 'SQL Injections2',
-        'type': 'Web Application',
-        'content': 'SQL Injections in a nutshell',
-        'date_posted': '06/12/2022',
-    },
-     {
-        'author':'IIvanov2',
-        'title': 'SQL Injections2',
-        'type': 'Web Application',
-        'content': 'SQL Injections in a nutshell',
-        'date_posted': '06/12/2022',
-    }
-]
-
-        
-
+from email import message
+from django.shortcuts import render, redirect
+from .forms import SubmissionForm
+from .models import Submission
+from django.contrib import messages      
 
 def home(request):
-    context = {
-        'posts':posts,
+    context = {    
+        'submissions': Submission.objects.all(),
         'title': 'Home'
     }
+    if request.method == 'POST':
+        form = SubmissionForm(request.POST)
+        print(form)
+        if form.is_valid():
+            email = form.cleaned_data.get('author_email')
+            form.save()
+            messages.success(request,f'Thank you for your submission, please confirm it on {email} !')
+            return redirect ('/')
+
     return render(request, 'csdb_templates/home.html', context,)
 
 def about(request):

@@ -1,0 +1,56 @@
+#submissions>#post:nth-child(even){
+    background:rgb(167, 165, 165);
+    border:0;    
+}
+
+#post{
+    font-size: 1.3rem;
+    border-top:solid rgba(0, 0, 0, 0.315) 0.25px !important;
+    border-bottom:solid rgba(0, 0, 0, 0.315) 0.25px !important;
+    border-left: 0;
+    border-right: 0;
+    min-height:5%;
+}
+#posts_legend{
+    font-size: 1.3rem;
+    border-bottom: solid black 0.55px ;
+}
+
+#posted_date{
+    justify-content: center;
+}
+
+#author_column{
+    border-right:solid black 0.25px;
+}
+
+
+
+@media (max-width: 1200px) {}
+@media (max-width: 990px) {
+    #author_column{
+        border-right:none;
+        border-bottom: solid black 0.25px;
+    }
+    
+}
+@media (max-width: 768px) {
+    #post{
+        font-size: 1.1rem;
+        border-top:solid rgba(0, 0, 0, 0.315) 0.25px !important;
+        border-bottom:solid rgba(0, 0, 0, 0.315) 0.25px !important;
+        border-left: 0;
+        border-right: 0;
+        min-height:5%;
+    }
+    #posts_legend{
+        font-size: 1.1rem;
+    }   
+    #posted_date{
+        justify-content: start;
+    }
+    
+}
+
+@media (max-width: 575px) {
+}

@@ -64,6 +64,13 @@
             <div class="col-sm px-0 min-vh-100">
               <nav class="navbar navbar-dark bg-dark">
                 <div class="container-fluid d-flex justify-content-end">
+                        {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert me-5 py-1 alert-{{ message.tags }}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                        {% endif %}
                     <span class="navbar-text">
                       <button type="button" class="btn btn-lg btn-outline-light ms-1 me-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="bi bi-envelope-plus me-2"></i>Submit a Vulnerability</button>
                     </span>
@@ -81,53 +88,53 @@
     <div class="modal-dialog modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header bg-dark">
-          <h5 class="modal-title" style="color:white;" id="staticBackdropLabel">Submit a Vulnerability</h5>
+          <h5 class="modal-title" style="font-size:2.3rem;color:white;" id="staticBackdropLabel">Submit a Vulnerability</h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-            <form id="submit_form">
+        <div class="modal-body">          
+            <form method="post" id="submit_form">
+                {% csrf_token %}
                 <div class="mb-3">
-                  <label for="Email" class="form-label">Email address</label>
-                  <input type="email" class="form-control" id="Email" placeholder="john@email.com" >
+                    <label for="email" class="form-label">Contact Email</label>
+                    {{submission_form.author_email}}
                 </div>
                 <div class="mb-3">
-                  <label for="Name" class="form-label">Author Name</label>
-                  <input type="name" class="form-control" id="Name" placeholder="John">
-                  <div id="namelHelp" class="form-text">This name will be used as an author name on a published submission.</div>
+                    <label for="name" class="form-label">Author Name</label>
+                    {{submission_form.author_name}}
+                    <div id="namelHelp" class="form-text">This name will be used as an author name on a published submission.</div>
                 </div>
                 <div class="mb-3">
-                    <label for="Type" class="form-label">Type of Vulnerability</label>
-                    <input type="type" class="form-control" id="Type" placeholder="e.g Injection">
+                    <label for="type" class="form-label">Type of Vulnerability</label>
+                    {{submission_form.vuln_type}}
                     <div id="typelHelp" class="form-text">Please enter the type of vulnerability being submitted.</div>
                 </div>
                 <div class="mb-3">
-                    <label for="Title" class="form-label">Title</label>
-                    <input type="title" class="form-control" id="Title" placeholder="e.g SQL Injection">
+                    <label for="title" class="form-label">Title</label>
+                    {{submission_form.vuln_title}}
                     <div id="titlelHelp" class="form-text">Please enter a descriptive, short title for your submission.</div>
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Description of the Vulnerability</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" style="resize:none;"></textarea>
-                </div>
+                    <label for="description_text" class="form-label">Description of the Vulnerability</label>
+                    {{submission_form.vuln_description}}
+                </div>                
                 <div class="mb-3">
-                    <label for="formFile" class="form-label">Attachments</label>
-                    <input class="form-control" type="file" id="formFile">
+                    <label for="formfile" class="form-label">Attachments</label>
+                    {{submission_form.vuln_attachments}}
                 </div>
                 <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input"  id="privacy_policy_check">
-                    <label class="form-check-label" style="font-size:1.1rem;" for="privacy_policy_check">I have read and accept the <a href=#>Privacy Policy</a></label>
-                  </div>
-              </form>
-        </div>
+                    {{submission_form.tc_consent}}
+                    <label class="form-check-label" style="font-size:1.1rem;" for="privacy_policy_check">I have read and accept the <a href=#>Terms & Privacy Policy</a></label>
+                </div>
+            </div>
         <div class="modal-footer bg-dark">
           <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-outline-light">Submit</button>
+          <button type="submit" class="btn btn-outline-light">Submit</button>
+        </form>
         </div>
       </div>
     </div>
   </div>
   
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

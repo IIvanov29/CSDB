@@ -28,19 +28,19 @@
             <p>Date</p>
         </div>
 </div>
-    {% for post in posts %}
+    {% for submission in submissions %}
     <div id="post" class="row container-fluid flex-row ps-1">
             <div id="title" class="col-4 ps-0 pt-2 d-flex justify-content-start">
-            <p>{{ post.title }}</p>
+            <p>{{ submission.vuln_title }}</p>
             </div>
             <div class="col-2 me-2 pt-2 ps-0 d-flex justify-content-start ">
-                <p>{{ post.type }}</p>
+                <p>{{ submission.vuln_type }}</p>
             </div>
             <div class="col-3 me-1 pt-2 d-flex justify-content-center ">
-                <p>{{ post.author }}</p>
+                <p>{{ submission.author_name }}</p>
             </div>
             <div id="posted_date" class="col-2 pt-2 d-flex">
-                <p>{{ post.date_posted }}</p>
+                {{ submission.date_submitted }}
             </div>
     </div>
     {% endfor %}
