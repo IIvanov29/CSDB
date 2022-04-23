@@ -1,4 +1,4 @@
-#submissions>#post:nth-child(even){
+#submissions>#post:nth-child(odd){
     background:rgb(167, 165, 165);
     border:0;    
 }

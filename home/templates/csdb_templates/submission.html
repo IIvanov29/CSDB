@@ -1,0 +1,33 @@
+{% extends "csdb_templates/base.html" %}
+{% block content %}
+
+        <div class="container container-fluid">
+            <div class="row">
+                    <div class="col-sm-4 d-flex justify-content-around align-items-center">
+                        <p class="h1">{{ submission.vuln_title }}</p>
+                    </div>
+                    <div class="col-sm-4 d-flex justify-content-around align-items-center">
+                        <p class="h4 pt-2"> Submitted by: {{ submission.author_name }}</p>
+                    </div>
+                    <div class="col-sm-4 d-flex justify-content-around align-items-center">
+                        <p class="h5 pt-1">On: {{ submission.date_submitted|date:'d F, Y'}}</p>
+                    </div>
+                    <hr>
+            </div>
+            
+            <div class="row">
+                <div class="col  d-flex justify-content-start align-items-center mt-5">
+                    <p class="h2"><strong>Type of Vulnerability:</strong> {{ submission.vuln_type }}</p>
+                </div>
+            </div>
+            <div class="row flex-column mt-5">
+                <div class="col d-flex justify-content-start align-items-center ">
+                    <p class="h3"><strong>Vulnerability Description:</strong></p>
+                </div>
+                <div class="col d-flex justify-content-start align-items-center">
+                    <p style="border:solid rgba(0, 0, 0, 0.24) 0.5px; border-radius: 20px;" class="h2 p-3">{{ submission.vuln_description }}</p>
+                </div>
+            </div>
+            </div>
+
+{% endblock %}

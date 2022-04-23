@@ -31,12 +31,12 @@
                 <div class="d-flex bg-dark flex-sm-column flex-row flex-nowrap align-items-center sticky-top">
                     <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center align-items-center">
                         <li class="nav-item">
-                            <a href="#" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
+                            <a href="{% url 'csdb-home' %}" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
                              <h1 class="pt-2"><strong>CSDB</strong></h1>
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard">
+                            <a href="{% url 'csdb-home' %}" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard">
                                 <i class="bi bi-journal-text"></i>
                             </a>
                         </li>
@@ -66,7 +66,7 @@
                 <div class="container-fluid d-flex justify-content-end">
                         {% if messages %}
                         {% for message in messages %}
-                            <div class="alert me-5 py-1 alert-{{ message.tags }}">
+                            <div class="alert mx-5 py-1 alert-{{ message.tags }}">
                                 {{ message }}
                             </div>
                         {% endfor %}
@@ -117,13 +117,15 @@
                     <label for="description_text" class="form-label">Description of the Vulnerability</label>
                     {{submission_form.vuln_description}}
                 </div>                
-                <div class="mb-3">
+                <!-- <div class="mb-3">
                     <label for="formfile" class="form-label">Attachments</label>
                     {{submission_form.vuln_attachments}}
-                </div>
-                <div class="mb-3 form-check">
-                    {{submission_form.tc_consent}}
-                    <label class="form-check-label" style="font-size:1.1rem;" for="privacy_policy_check">I have read and accept the <a href=#>Terms & Privacy Policy</a></label>
+                </div> -->
+                <div class="mb-3 ps-1 form-check">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" style="font-size:1.1rem;" for="privacy_policy_check">I have read and accept the <a href=#>Terms & Privacy Policy</a></label>
+                      </div>
                 </div>
             </div>
         <div class="modal-footer bg-dark">
