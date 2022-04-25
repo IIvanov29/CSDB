@@ -20,13 +20,48 @@ body{
 
 }
 
-@media (max-width: 1200px) {}
-@media (max-width: 990px) {}
+
+#tutorials_category_carousel .card{
+    min-height:34vw;
+    max-width:37vw; 
+    max-height:42vw;
+}
+#tutorials_category_carousel{
+    width:60%;
+}
+
+@media (max-width: 1200px) {
+#tutorials_category_carousel .card{
+    min-height:55vw;
+    max-width:55vw; 
+}
+}
+@media (max-width: 990px) {
+#tutorials_category_carousel{
+    width:100%;
+}
+#tutorials_category_carousel .card{
+    min-height:95vw;
+    max-width:55vw; 
+}
+}
 @media (max-width: 768px) {
+#tutorials_category_carousel{
+    width:100%;
+}
+#tutorials_category_carousel .card{
+    min-height:65vw;
+    max-width:55vw; 
+}
 
 }
 
 @media (max-width: 575px) {
+    
+#tutorials_category_carousel .card{
+    min-height:110vw;
+    max-width:55vw; 
+}
 .nav-link{
     margin-right:1vw;
 }

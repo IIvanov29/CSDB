@@ -20,7 +20,7 @@ def save_submission(request):
 
 def home(request):
 
-    p = Paginator(Submission.objects.all().order_by('-date_submitted'),13)
+    p = Paginator(Submission.objects.all().order_by('-date_submitted'),14)
     page = request.GET.get('page')
     submissions = p.get_page(page) 
     context = {    

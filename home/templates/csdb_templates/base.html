@@ -67,6 +67,13 @@
             <div class="col-sm px-0 min-vh-100">
               <nav class="navbar navbar-dark bg-dark">
                 <div class="container-fluid d-flex justify-content-end">
+                    {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert mx-5 py-1 mt-1 mb-0 alert-{{ message.tags }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                    {% endif %}
                     <span class="navbar-text">
                       <button type="button" class="btn btn-lg btn-outline-light ms-1 me-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="bi bi-envelope-plus me-2"></i>Submit a Vulnerability</button>
                     </span>
@@ -140,8 +147,19 @@
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">          
-            <p class="h4">The CSDB is a platform created for a Dissertation Project by Ivelin Ivanov.<br class="pb-1">The idea behind the CSDB is to centralize cyber security knowledge
-            of all kinds.</p>
+            <p class="h3">The Cyber Security DataBase (CSDB) was developed as part of a dissertation project by <a href="#" class="link-dark">Ivelin Ivanov.</a>
+            <p class="pt-3 h3">The question behind the dissertation project was "How to centralize cyber security knowledge". The CSDB platform answers that by
+                collecting different types of knowledge regarding Cyber Security, and publishing it all in one place. The platform has the following features:
+                <ul><strong>
+                    <li class="h3"><strong>Community-submitted, reviewed by administrators vulnerabilities</strong></li>
+                    <li class="h3"><strong>Tutorials on different topics related to CyberSec</strong></li>
+                    <li class="h3"><strong>Latest Cyber Security News</strong></li>
+                    <li class="h3"><strong>Community Forum - Coming Soon!</strong></li>
+                </ul>
+            </p>
+            <p class="h2 pt-5"> "Knowledge is power" - Sir Francis Bacon</p>
+            
+        </p>
         </div>
         <div class="modal-footer bg-dark">
         </div>

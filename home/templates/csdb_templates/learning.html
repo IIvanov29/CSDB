@@ -2,71 +2,113 @@
 {% block content %}
 {% load static %}
 
-    <h1 class="d-flex justify-content-center">CSDB Learning</h1>
+    <h1 class="d-flex justify-content-center">CSDB Learning</h1>    
     <hr>
-    <div class="row d-flex justify-content-center align-items-center">
+    <div class="row d-flex justify-content-center align-items-center" >
         <h2 class="d-flex justify-content-center"><strong>Learn about...</strong></h2>
-        <div class="col d-flex justify-content-center">
-            <div id="tutorials_category_carousel" style="width:80%" class="carousel slide carousel-dark" data-bs-ride="carousel" data-bs-interval="false">
+        <div class="col d-flex justify-content-center" >
+            <div id="tutorials_category_carousel"  class="carousel slide carousel-dark" data-bs-ride="carousel" data-bs-interval="false" stlye="min-height:100%;">
                 <div class="carousel-inner d-flex align-items-center">
                     <div class="carousel-item active">
                         <div class="container d-flex justify-content-center ">
-                            <div class="card pt-2 px-2 mb-2" style="width: 27rem; min-height: 25rem;">
-                                <img src="{% static 'home/img/cybersecurity_basics.png' %}" class="card-img-top img-fluid p-1" style="border: solid 1px rgba(0, 0, 0, 0.103);" alt="Networking Tutorials">
+                            <div class="card pt-2 px-2 mb-2" >
+                                <img src="{% static 'home/img/cybersecurity_basics.png' %}" class="card-img-top" style="border: solid 1px rgba(0, 0, 0, 0.103);" alt="Networking Tutorials">
                                 <div class="card-body">
-                                  <h5 class="d-flex justify-content-center card-title"><strong>The Basics of Cyber Security</strong></h5>
-                                  <p class="card-text h3">No matter where you go, computer networks will be there. Why not learn about how they work?</p>
+                                  <h5 class="d-flex justify-content-center card-title"><strong>The Basics of Cyber Security</strong></h5><hr>
+                                  <p class="card-text h3">Everyone has to start start somewhere, why not with the basics?</p>
                                   <a href="{% url 'learning-csbasics' %}" class="link stretched-link"></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                        <div class="carousel-item">
-                            <div class=" d-flex justify-content-center">
-                                <div class="card pt-2 px-2 mb-2" style="width: 27rem; min-height: 25rem;">
-                                    <img src="{% static 'home/img/cyber_sec_tools.jpg' %}" class="card-img-top img-fluid " style="border: solid 1px rgba(0, 0, 0, 0.432);" alt="Networking Tutorials">
-                                    <div class="card-body">
-                                      <h5 class="d-flex justify-content-center card-title"><strong>Cyber Security Tools</strong></h5>
-                                      <p class="card-text h3">No matter where you go, computer networks will be there. Why not learn about how they work?</p>
-                                      <a href="{% url 'learning-cstools' %}" class="link stretched-link"></a>
-                                    </div>
+                    <div class="carousel-item">
+                        <div class="container d-flex justify-content-center ">
+                            <div class="card pt-2 px-2 mb-2" >
+                                <img src="{% static 'home/img/networking_tutorials.jpg' %}" class="card-img-top" style="border: solid 1px rgba(0, 0, 0, 0.103);" alt="Networking Tutorials">
+                                <div class="card-body">
+                                    <h5 class="d-flex justify-content-center card-title"><strong>Networking</strong></h5><hr>
+                                    <p class="card-text h3">No matter where you go, computer networks will be there. Why not learn about how they work?</p>
+                                    <a href="{% url 'learning-networking' %}" class="link stretched-link"></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="carousel-item">
-                            <div class=" d-flex justify-content-center">
-                                <div class="card pt-2 px-2 mb-2" style="width: 27rem; min-height: 25rem;">
-                                    <img src="{% static 'home/img/programming.jpg' %}" class="card-img-top img-fluid" style="border: solid 1px rgba(0, 0, 0, 0.432);" alt="Networking Tutorials">
-                                    <div class="card-body">
-                                      <h5 class="d-flex justify-content-center card-title"><strong>Programming</strong></h5>
-                                      <p class="card-text h3">No matter where you go, computer networks will be there. Why not learn about how they work?</p>
-                                      <a href="{% url 'learning-programming' %}" class="link stretched-link"></a>
-                                    </div>
+                    </div> 
+                    <div class="carousel-item">
+                        <div class="container d-flex justify-content-center ">
+                            <div class="card pt-2 px-2 mb-2">
+                                <img src="{% static 'home/img/cyber_sec_tools.jpg' %}" class="card-img-top" style="border: solid 1px rgba(0, 0, 0, 0.103);" alt="Networking Tutorials">
+                                <div class="card-body py-2">
+                                    <h5 class="d-flex justify-content-center card-title"><strong>Cyber Security Tools</strong></h5><hr>
+                                    <p class="card-text h3">Learn about the many tools, developed to make a cyber security professional's work easier.</p>
+                                    <a href="{% url 'learning-cstools' %}" class="link stretched-link"></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="carousel-item">
-                            <div class=" d-flex justify-content-center">
-                                <div class="card pt-2 px-2 mb-2" style="width: 27rem; min-height: 25rem;">
-                                    <img src="{% static 'home/img/networking_tutorials.jpg' %}" class="card-img-top img-fluid" style="border: solid 1px rgba(0, 0, 0, 0.432);" alt="Networking Tutorials">
-                                    <div class="card-body">
-                                      <h5 class="d-flex justify-content-center card-title"><strong>Networking</strong></h5>
-                                      <p class="card-text h3">No matter where you go, computer networks will be there. Why not learn about how they work?</p>
-                                      <a href="{% url 'learning-networking' %}" class="link stretched-link"></a>
-                                    </div>
+                    </div> 
+                    <div class="carousel-item">
+                        <div class="container d-flex justify-content-center ">
+                            <div class="card pt-2 px-2 mb-2" >
+                                <img src="{% static 'home/img/programming.jpg' %}" class="card-img-top" style="border: solid 1px rgba(0, 0, 0, 0.103);" alt="Networking Tutorials">
+                                <div class="card-body">
+                                    <h5 class="d-flex justify-content-center card-title"><strong>Programming</strong></h5><hr>
+                                    <p class="card-text h4">Reading and understanding code, and scripting are powerful tools, every security professional might benefit from.</p>
+                                    <a href="{% url 'learning-programming' %}" class="link stretched-link"></a>
                                 </div>
                             </div>
                         </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#tutorials_category_carousel" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#tutorials_category_carousel" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                </button>
+                    </div>    
               </div>
+              <button class="carousel-control-prev me-5" type="button" data-bs-target="#tutorials_category_carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              </button>
+              <button class="carousel-control-next ms-5" type="button" data-bs-target="#tutorials_category_carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              </button>
               <hr>
         </div>
     </div>
 </div>
 
 {% endblock content %}
+
+
+
+
+
+
+<!-- <div class="carousel-item">
+    <div class=" d-flex justify-content-center">
+        <div class="card pt-2 px-2 mb-2">
+            <img src="{% static 'home/img/cyber_sec_tools.jpg' %}" class="card-img-top" style="border: solid 1px rgba(0, 0, 0, 0.432);" alt="Networking Tutorials">
+            <div class="card-body">
+              <h5 class="d-flex justify-content-center card-title"><strong>Cyber Security Tools</strong></h5>
+              <p class="card-text h3">Learn about the many tools, developed to make a cyber security professional's life easier.</p>
+              <a href="{% url 'learning-cstools' %}" class="link stretched-link"></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="carousel-item">
+    <div class=" d-flex justify-content-center">
+        <div class="card pt-2 px-2 mb-2" >
+            <img src="{% static 'home/img/programming.jpg' %}" class="card-img-top" style="border: solid 1px rgba(0, 0, 0, 0.432);" alt="Networking Tutorials">
+            <div class="card-body">
+              <h5 class="d-flex justify-content-center card-title"><strong>Programming</strong></h5>
+              <p class="card-text h4">Reading and understanding code, and scripting are powerful tools, every security professional might benefit from.</p>
+              <a href="{% url 'learning-programming' %}" class="link stretched-link"></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="carousel-item">
+    <div class=" d-flex justify-content-center">
+        <div class="card pt-2 px-2 mb-2" >
+            <img src="{% static 'home/img/networking_tutorials.jpg' %}" class="card-img-top" style="border: solid 1px rgba(0, 0, 0, 0.432);" alt="Networking Tutorials">
+            <div class="card-body">
+              <h5 class="d-flex justify-content-center card-title"><strong>Networking</strong></h5>
+              <p class="card-text h3">No matter where you go, computer networks will be there. Why not learn about how they work?</p>
+              <a href="{% url 'learning-networking' %}" class="link stretched-link"></a>
+            </div>
+        </div>
+    </div>
+</div> -->
