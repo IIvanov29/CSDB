@@ -4,6 +4,13 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name="csdb-home"),
-    path('about/', views.about, name='csdb-about'),
+    path('learning', views.learning, name='csdb-learning'),
+    path('news', views.news, name='csdb-news'),
     path('show_submission/<submission_id>', views.show_submission , name="show-submission"),
+    path('networking',views.networking, name="learning-networking"),
+    path('cstools',views.cstools, name="learning-cstools"),
+    path('programming',views.programming, name="learning-programming"),
+    path('csbasics',views.csbasics, name="learning-csbasics"),
+
+
 ]

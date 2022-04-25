@@ -1,0 +1,34 @@
+{% extends "csdb_templates/base.html" %}
+{% block content %}
+<div class="container-fluid m-2">
+    <div class="row">
+        <h1 class="d-flex justify-content-center">Latest Cyber Security News</h1>
+        <hr>
+    <div class="row">
+        <div class="col-md-4 mb-5">
+            <div class="row d-flex justify-content-center">
+                <a class="link-dark d-flex justify-content-center" href="https://www.itsecurityguru.org/about-us/"><h2>IT Security Guru</h2></a>
+            </div>
+            <div class="row">
+            <rssapp-feed id="O0CGzHNE3NUW13b7"></rssapp-feed><script src="https://widget.rss.app/v1/feed.js" type="text/javascript" async></script>
+            </div>
+        </div>
+        <div class="col-md-4 mb-5">
+            <div class="row d-flex justify-content-center">
+                <a class="link-dark d-flex justify-content-center" href="https://www.csoonline.com/about/about.html"><h2>CSO Online</h2></a>
+             </div>
+             <div class="row">
+            <rssapp-feed id="ihLw7tBEDHV2LpWD"></rssapp-feed><script src="https://widget.rss.app/v1/feed.js" type="text/javascript" async></script>
+             </div>
+        </div>
+        <div class="col-md-4 mb-5">
+            <div class="row d-flex justify-content-center">
+                <a class="link-dark d-flex justify-content-center" href="https://thehackernews.com/p/about-us.html"><h2>The Hacker News</h2></a>
+             </div>
+             <div class="row">
+                <rssapp-feed id="jcMWfZKQK6Z8Po7E"></rssapp-feed><script src="https://widget.rss.app/v1/feed.js" type="text/javascript" async></script>
+             </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

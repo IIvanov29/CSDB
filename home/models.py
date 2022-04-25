@@ -16,3 +16,9 @@ class Submission(models.Model):
     vuln_attachments = models.FileField()
     is_approved = models.BooleanField(blank=True)  
 
+class Tutorial(models.Model):
+    tutorial_title = models.CharField(max_length = 30)
+    tutorial_author = models.CharField(max_length=24)
+    tutorial_category = models.CharField(max_length = 200,choices=[("cstools", 'Cyber Sec Tools'), ("networking", 'Networking'),("misc", 'Misc')])
+    tutorial_link = models.URLField()
+    tutorial_date_posted = models.DateTimeField(blank=True, default=timezone.now)

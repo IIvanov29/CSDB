@@ -1,5 +1,5 @@
 from django.contrib import admin
-from home.models import Submission
+from home.models import Submission, Tutorial
 # Register your models here.
 
 class SubmissionAdmin(admin.ModelAdmin):
@@ -7,3 +7,4 @@ class SubmissionAdmin(admin.ModelAdmin):
     readonly_fields = ('author_email','author_name','vuln_type','vuln_title','vuln_description','vuln_attachments','date_submitted')
     date_hierarchy = 'date_submitted'
 admin.site.register(Submission, SubmissionAdmin)
+admin.site.register(Tutorial)
