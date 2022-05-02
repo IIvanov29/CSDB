@@ -1,4 +1,3 @@
-from tkinter import Widget
 from typing_extensions import Required
 from xml.dom.minidom import Attr
 from django import forms
