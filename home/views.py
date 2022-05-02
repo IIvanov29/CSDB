@@ -17,10 +17,13 @@ def save_submission(request):
                 form.save()
                 messages.success(request,f'Thank you for your submission, you will be able to see it on our page after it passes a review!')
                 return redirect ('/')
-
+            else:
+                messages.warning(request,f'Verification Failure, please try again!')
+                print("NO")
+                return redirect('/')
 def home(request):
 
-    p = Paginator(Submission.objects.all().order_by('-date_submitted'),14)
+    p = Paginator(Submission.objects.filter(is_approved=True).order_by('-date_submitted'),10)
     page = request.GET.get('page')
     submissions = p.get_page(page) 
     context = {    

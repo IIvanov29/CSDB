@@ -5,14 +5,17 @@ name = "pypi"
 
 [packages]
 gunicorn = "==20.1.0"
-whitenoise = "*"
+whitenoise = "==6.0.0"
 asgiref = "==3.5.0"
 pytz = "==2022.1"
 sqlparse = "==0.4.2"
 typing-extensions = "==4.1.1"
 Django = "==3.2.12"
-psycopg2 = "*"
-dj-database-url = "*"
+psycopg2 = "==2.9.3"
+dj-database-url = "==0.5.0"
+django-recaptcha = "==3.0.0"
+python-dotenv = "*"
+python-decouple = "*"
 
 [dev-packages]
 
