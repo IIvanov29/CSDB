@@ -19,6 +19,23 @@ body{
     font-size:1.1rem;
 
 }
+#tutorial{
+    font-size: 1.3rem;
+    border-top:solid rgba(0, 0, 0, 0.315) 0.25px !important;
+    border-bottom:solid rgba(0, 0, 0, 0.315) 0.25px !important;
+    border-left: 0;
+    border-right: 0;
+    min-height:5%;
+}
+#tutorials_legend{
+    font-size: 1.3rem;
+    border-bottom: solid black 0.55px ;
+}
+
+#csbasics_tutorials>#tutorial:nth-child(odd){
+    background:rgb(167, 165, 165);
+    border:0;    
+}
 
 
 #tutorials_category_carousel .card{
@@ -46,6 +63,11 @@ body{
 }
 }
 @media (max-width: 768px) {
+    
+#tutorial_date_posted, #tutorial_author{
+    display: flex !important;
+    justify-content: center !important;
+} 
 #tutorials_category_carousel{
     width:100%;
 }

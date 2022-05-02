@@ -1,5 +1,70 @@
 {% extends "csdb_templates/base.html" %}
 {% block content %}
 
-<h1>Will be available soon !</h1>
+<h1 class="d-flex justify-content-center">Cyber Security Basics Tutorials</h1>
+<hr>
+    <div id="csbasics_tutorials" class="container-fluid d-flex align-items-center justify-content-center flex-column mx-0 ps-2 pe-1">
+        <div id="tutorials_legend" class="mb-1  row container-fluid flex-row ps-1">
+            <div id="title" class="col-4 pt-2 ps-0 pb-0 d-flex justify-content-start align-items-end">
+            <p>Tutorial Title</p>
+            </div>
+            <div class="col-3 me-1 pt-2 ps-0  d-flex justify-content-center align-items-end ">
+                <p>Author</p>
+            </div>
+            <div class="col-2 pt-2 ps-0 d-flex justify-content-center align-items-end ">
+                <p>Date Posted</p>
+            </div>
+    </div>
+        {% for csbasics_tutorial in csbasics_tutorials %}
+        <div id="tutorial" class="row container-fluid flex-row ps-1">
+                <div id="title" class="col-4 ps-0 pt-2 d-flex justify-content-start">
+                <a class="h5 p-2 link-dark" style="text-decoration:none;" href="{% url 'show-tutorial' csbasics_tutorial.id %}">{{ csbasics_tutorial.tutorial_title }}</a>
+                </div>
+                <div class="col-3 me-1 pt-2 d-flex justify-content-center ">
+                    <p>{{ csbasics_tutorial.tutorial_author }}</p>
+                </div>
+                <div id="posted_date" class="col-2 pt-2 d-flex">
+                    {{ csbasics_tutorial.tutorial_date_posted|date:'d F, Y' }}
+                </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div id="page_nav" class="row">
+        <div class="col d-flex align-items-center justify-content-center mt-3">
+            <nav aria-label="Page navigation">
+                <ul class="pagination pagination-sm">
+                  {% if csbasics_tutorials.has_previous %}
+                  <li class="page-item">
+                    <a class="page-link" style="color:black;" href="?page=1" aria-label="First">
+                      <span aria-hidden="true">&laquo;</span>
+                      <span class="sr-only">First</span>
+                    </a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" style="color:black;" href="?page={{ csbasics_tutorials.previous_page_number }}" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                  </li>
+                  {% endif %}
+                  <li class="page-item"><p class ="page-link" style="color:black;" ><strong>{{ csbasics_tutorials.number }}</strong> of <strong>{{ csbasics_tutorials.paginator.num_pages }}</strong></p></li>
+                  {% if csbasics_tutorials.has_next %}
+                  <li class="page-item">
+                    <a class="page-link" style="color:black;" href="?page={{ csbasics_tutorials.next_page_number }}" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" style="color:black;" href="?page={{ csbasics_tutorials.paginator.num_pages }}" aria-label="Last">
+                      <span aria-hidden="true">&raquo;</span>
+                      <span class="sr-only">Last</span>
+                    </a>
+                  </li>
+                  {% endif %}
+                </ul>
+              </nav>
+        </div>
+    </div>
+
 {% endblock content %}

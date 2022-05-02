@@ -1,0 +1,29 @@
+{% extends "csdb_templates/base.html" %}
+{% block content %}
+
+
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-around align-items-center">
+            <div class="col-md-2"><p id="tutorial_date_posted" class="h5 d-flex justify-content-start">Posted on:{{ tutorial.tutorial_date_posted|date:'d F, Y' }}</p></div>
+            <div class="col-md-8 px-2"><p class="d-flex justify-content-center h2">{{ tutorial.tutorial_title }}</p></div>
+            <div class="col-md-2 ps-2"><p id="tutorial_author" class="h5 d-flex justify-content-end">By:{{tutorial.tutorial_author }}</p></div>
+            <hr>
+        </div>
+        <div class="row d-flex justify-content-center align-items-center">
+          
+            <div class="col d-flex justify-content-center align-items-center flex-column">
+                {% if tutorial.tutorial_video_link %}
+                <div class="row d-flex justify-content-center align-items-center my-5">
+                    <iframe id="tutorial_video_player" style="width:65rem; height:35rem;" src="{{ tutorial.tutorial_video_link }}" allowfullscreen></iframe>
+                </div>
+                {% endif %}
+                <div class="row d-flex justify-content-center align-items-center">
+                    <p style="border:solid rgba(0, 0, 0, 0.24) 0.5px; border-radius: 20px;" class="h2 p-3">{{ tutorial.tutorial_description_text }}</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock content %}

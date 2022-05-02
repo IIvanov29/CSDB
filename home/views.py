@@ -49,28 +49,47 @@ def learning(request):
     first = False
     context = {
         'title': 'Learning',
-        'networking_tutorials':Tutorial.objects.filter(tutorial_category="networking"),
-        'networking_tutorials_number':range(0, 3),
         }
-    print(math.ceil(Tutorial.objects.count()/2))
     return render(request, 'csdb_templates/learning.html', context)
 
 
 def networking(request):
     save_submission(request)
-    return render(request, 'csdb_templates/learning-networking.html')
+    networking_tutorials_p = Paginator(Tutorial.objects.filter(tutorial_category="networking").order_by('-tutorial_date_posted'),10)
+    networking_tutorials_page = request.GET.get('page')
+    networking_tutorials = networking_tutorials_p.get_page(networking_tutorials_page) 
+
+    return render(request, 'csdb_templates/learning-networking.html', {'networking_tutorials': networking_tutorials} )    
 
 def cstools(request):
     save_submission(request)
-    return render(request, 'csdb_templates/learning-cstools.html')
+    cstools_tutorials_p = Paginator(Tutorial.objects.filter(tutorial_category="cstools").order_by('-tutorial_date_posted'),10)
+    cstools_tutorials_page = request.GET.get('page')
+    cstools_tutorials = cstools_tutorials_p.get_page(cstools_tutorials_page) 
+
+    return render(request, 'csdb_templates/learning-cstools.html', {'cstools_tutorials': cstools_tutorials} )    
     
 def programming(request):
     save_submission(request)
-    return render(request, 'csdb_templates/learning-programming.html')
+    programming_tutorials_p = Paginator(Tutorial.objects.filter(tutorial_category="programming").order_by('-tutorial_date_posted'),10)
+    programming_tutorials_page = request.GET.get('page')
+    programming_tutorials = programming_tutorials_p.get_page(programming_tutorials_page) 
+
+    return render(request, 'csdb_templates/learning-programming.html', {'programming_tutorials': programming_tutorials} )    
 
 def csbasics(request):
     save_submission(request)
-    return render(request, 'csdb_templates/learning-csbasics.html')    
+    csbasics_tutorials_p = Paginator(Tutorial.objects.filter(tutorial_category="csbasics").order_by('-tutorial_date_posted'),10)
+    csbasics_tutorials_page = request.GET.get('page')
+    csbasics_tutorials = csbasics_tutorials_p.get_page(csbasics_tutorials_page) 
+
+    return render(request, 'csdb_templates/learning-csbasics.html', {'csbasics_tutorials': csbasics_tutorials} )    
+
+def tutorial(request, tutorial_id):
+    tutorial = Tutorial.objects.get(pk=tutorial_id)
+
+    return render(request,'csdb_templates/tutorial.html', {'tutorial':tutorial})
+
 
 
 def news(request):
@@ -78,3 +97,9 @@ def news(request):
     save_submission(request)
 
     return render(request, 'csdb_templates/news.html', {'title': 'News'})
+
+
+def forum(request):
+    save_submission(request)
+
+    return render(request, 'csdb_templates/forum.html', {'title':'Forum'})

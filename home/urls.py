@@ -11,6 +11,8 @@ urlpatterns = [
     path('cstools',views.cstools, name="learning-cstools"),
     path('programming',views.programming, name="learning-programming"),
     path('csbasics',views.csbasics, name="learning-csbasics"),
+    path('tutorial/<tutorial_id>', views.tutorial , name="show-tutorial"),
+    path('forum', views.forum, name="csdb-forum"),
 
 
 ]
