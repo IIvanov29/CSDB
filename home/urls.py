@@ -13,6 +13,6 @@ urlpatterns = [
     path('csbasics',views.csbasics, name="learning-csbasics"),
     path('tutorial/<tutorial_id>', views.tutorial , name="show-tutorial"),
     path('forum', views.forum, name="csdb-forum"),
-
+    path('privacy', views.privacy, name="csdb-privacy"),
 
 ]
