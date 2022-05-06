@@ -106,3 +106,8 @@ def forum(request):
     save_submission(request)
 
     return render(request, 'csdb_templates/forum.html', {'title':'Forum'})
+
+def privacy(request):
+    save_submission(request)
+
+    return render(request, 'csdb_templates/privacy.html', {'title':'Privacy Policy'})
